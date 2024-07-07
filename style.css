@@ -17,6 +17,7 @@ body{
     background-color: #FFE8FC;
     padding: 1rem;
     gap: 0.5rem;
+    max-width: 34rem;
 }
 .header{
     font-size: 4rem;
