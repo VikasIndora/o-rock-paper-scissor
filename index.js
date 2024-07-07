@@ -25,9 +25,6 @@ function getComputerChoice(){
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 function showScore(){
     console.log(`Your score is: ${humanScore}, Computer score is: ${computerScore}`);
 }
@@ -73,4 +70,24 @@ function playRound(humanChoice,computerChoice){
     }
 }
 
-playRound(humanSelection,computerSelection);
+let humanSelection;
+let computerSelection;
+
+function playGame(){
+    for(let i = 1; i<=5; i++){
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+        playRound(humanSelection,computerSelection);
+        console.log("--------------------------------------")
+    }
+    console.log(`Final Scores:`) + console.log(showScore());
+    if (humanScore == computerScore){
+        console.log(`Jeez.. all that for a draw.`)
+    }else if (humanScore > computerScore){
+        console.log(`Hurray! You are THE ultimate champion!! (saviour of humanity)`)
+    }else {
+        console.log(`Its over.. in the end computer wins (end of humanity)`)
+    }
+}
+
+playGame();
