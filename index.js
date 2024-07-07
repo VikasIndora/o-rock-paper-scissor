@@ -2,15 +2,15 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getHumanChoice(){
-    let userInput = prompt("Enter your pick (among rock, paper and scissor)").toLowerCase();
-    if (userInput === ''){
+    let userInput = prompt("Enter your pick (rock, paper and scissor)").toLowerCase().trim();
+    if (userInput === '' || userInput === null){
         alert('The page will refresh and then enter an input')
-        return location.replace(location.href);
+        location.replace(location.href); // with no return value set any function returns 'undefined'.
     } else if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissor'){
         return userInput;
     } else{
         alert('The page will refresh and then enter a valid input')
-        return location.replace(location.href);
+        location.replace(location.href);
     }
 }
 
@@ -76,6 +76,7 @@ let computerSelection;
 function playGame(){
     for(let i = 1; i<=5; i++){
         humanSelection = getHumanChoice();
+        if (humanSelection == undefined) {return;} // exit playGame() for an 'undefined' return value in getHumanChoice().
         computerSelection = getComputerChoice();
         playRound(humanSelection,computerSelection);
         console.log("--------------------------------------")
