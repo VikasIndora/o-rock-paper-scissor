@@ -73,6 +73,28 @@ function playRound(humanChoice,computerChoice){
 let humanSelection;
 let computerSelection;
 
+const rock = document.querySelector('.rock')
+const paper = document.querySelector('.paper')
+const scissor = document.querySelector('.scissor')
+
+rock.addEventListener('click', (e)=>{
+    humanSelection = 'rock';
+    computerSelection = getComputerChoice();
+    playRound(humanSelection,computerSelection);
+})
+
+paper.addEventListener('click', (e)=>{
+    humanSelection = 'paper';
+    computerSelection = getComputerChoice();
+    playRound(humanSelection,computerSelection);
+})
+
+scissor.addEventListener('click', (e)=>{
+    humanSelection = 'scissor';
+    computerSelection = getComputerChoice();
+    playRound(humanSelection,computerSelection);
+})
+
 function playGame(){
     for(let i = 1; i<=5; i++){
         humanSelection = getHumanChoice();
