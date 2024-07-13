@@ -13,47 +13,47 @@ function getComputerChoice(){
 }
 
 function showScore(){
-    displaySection.appendChild(document.createTextNode(`Your score is: ${humanScore}, Computer score is: ${computerScore}`))
+    return `Your score: ${humanScore} & Computer score: ${computerScore}`
 }
 function showChoice(){
-    displaySection.appendChild(document.createTextNode(`You chose: ${humanSelection}, Computer chose: ${computerSelection}`))
+    return `You chose: ${humanSelection} & Computer chose: ${computerSelection}`
 }
 
 function playRound(humanChoice,computerChoice){
     if (humanChoice == computerChoice){
-        displaySection.appendChild(document.createTextNode('Its a Draw..'));
-        showChoice();
-        showScore();
+        displaySection.appendChild(document.createTextNode(`Its a Draw.. || ${showChoice()}`));
+        hScore.textContent = `${humanScore}`;
+        cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'rock' && computerChoice == 'paper'){
-        displaySection.appendChild(document.createTextNode("Computer wins!"));
-        showChoice();
+        displaySection.appendChild(document.createTextNode(`Computer Wins! || ${showChoice()}`));
         ++computerScore;
-        showScore();
+        hScore.textContent = `${humanScore}`;
+        cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'rock' && computerChoice == 'scissor'){
-        displaySection.appendChild(document.createTextNode("You win!"));
-        showChoice();
+        displaySection.appendChild(document.createTextNode(`You Win! || ${showChoice()}`));
         ++humanScore;
-        showScore();
+        hScore.textContent = `${humanScore}`;
+        cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'paper' && computerChoice == 'rock'){
-        displaySection.appendChild(document.createTextNode("You win!"));
-        showChoice();
+        displaySection.appendChild(document.createTextNode(`You Win! || ${showChoice()}`));
         ++humanScore;
-        showScore();
+        hScore.textContent = `${humanScore}`;
+        cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'paper' && computerChoice == 'scissor'){
-        displaySection.appendChild(document.createTextNode("Computer wins!"));
-        showChoice();
+        displaySection.appendChild(document.createTextNode(`Computer Wins! || ${showChoice()}`));
         ++computerScore;
-        showScore();
+        hScore.textContent = `${humanScore}`;
+        cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'scissor' && computerChoice == 'rock'){
-        displaySection.appendChild(document.createTextNode("Computer wins!"));
-        showChoice();
+        displaySection.appendChild(document.createTextNode(`Computer Wins! || ${showChoice()}`));
         ++computerScore;
-        showScore();
+        hScore.textContent = `${humanScore}`;
+        cScore.textContent = `${computerScore}`;
     }else {
-        displaySection.appendChild(document.createTextNode("You win!"));
-        showChoice();
+        displaySection.appendChild(document.createTextNode(`You Win! || ${showChoice()}`));
         ++humanScore;
-        showScore();
+        hScore.textContent = `${humanScore}`;
+        cScore.textContent = `${computerScore}`;
     }
 }
 
@@ -88,3 +88,5 @@ scissor.addEventListener('click', (e)=>{
 const displaySection = document.createElement('div');
 displaySection.style.cssText = "border-radius: 2rem; border: 2px solid hotpink; padding: 4rem;"
 const bodySection = document.querySelector('body');
+const hScore = document.querySelector('.hScore');
+const cScore = document.querySelector('.cScore');

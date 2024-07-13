@@ -4,7 +4,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 img{
@@ -13,7 +13,9 @@ img{
 }
 
 .header{
-    background-image: url(./images/blurry-gradient-haikei.svg);
+    background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background-clip: text;
+    color: transparent;
     font-size: 4rem;
     border-bottom: 1px dotted black;
     border-radius: 0.8rem;
@@ -28,4 +30,19 @@ img{
     border-radius: 2rem;
     border-color: hotpink;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.score{
+    text-align: center;
+    border: 2px solid hotpink;
+    border-radius: 2rem;
+    padding: 0rem 4rem;
+}
+
+.score > p{
+    text-decoration: underline;
+}
+
+.score > div{
+    font-size: 1.3rem;
 }
