@@ -52,6 +52,9 @@ function playRound(humanChoice,computerChoice){
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }
+
+    document.dispatchEvent(myEvent)
+    // Or I can dispatch it inside all button events as they have a track of score too after running playRound function 
 }
 
 let humanSelection;
@@ -83,6 +86,22 @@ scissor.addEventListener('click', (e)=>{
     computerSelection = getComputerChoice();
     playRound(humanSelection,computerSelection);
     bodySection.insertBefore(displaySection,scoreSection);
+})
+
+const myEvent = new Event('gameEnd');
+document.addEventListener('gameEnd',()=>{
+    if(humanScore == 5) {
+        alert('Congratulations!! You won!')
+        setTimeout(()=>{
+            location.replace(location.href)   
+        },2000)
+    }
+    else if(computerScore == 5) {
+        alert('Oh no.. Computer won')
+        setTimeout(()=>{
+            location.replace(location.href)   
+        },2000)
+    }
 })
 
 const displaySection = document.createElement('div');
