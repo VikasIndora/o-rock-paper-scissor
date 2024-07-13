@@ -4,7 +4,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 img{
@@ -23,6 +23,7 @@ img{
 
 .buttons{
     display: flex;
+    flex-wrap: wrap;
     gap: 3rem;
 }
 
@@ -33,10 +34,14 @@ img{
 }
 
 .score{
-    text-align: center;
     border: 2px solid hotpink;
     border-radius: 2rem;
     padding: 0rem 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .score > p{

@@ -66,7 +66,7 @@ rock.addEventListener('click', (e)=>{
     humanSelection = 'rock';
     computerSelection = getComputerChoice();
     playRound(humanSelection,computerSelection);
-    bodySection.appendChild(displaySection)
+    bodySection.insertBefore(displaySection,scoreSection);
 })
 
 paper.addEventListener('click', (e)=>{
@@ -74,7 +74,7 @@ paper.addEventListener('click', (e)=>{
     humanSelection = 'paper';
     computerSelection = getComputerChoice();
     playRound(humanSelection,computerSelection);
-    bodySection.appendChild(displaySection)
+    bodySection.insertBefore(displaySection,scoreSection);
 })
 
 scissor.addEventListener('click', (e)=>{
@@ -82,7 +82,7 @@ scissor.addEventListener('click', (e)=>{
     humanSelection = 'scissor';
     computerSelection = getComputerChoice();
     playRound(humanSelection,computerSelection);
-    bodySection.appendChild(displaySection)
+    bodySection.insertBefore(displaySection,scoreSection);
 })
 
 const displaySection = document.createElement('div');
@@ -90,3 +90,4 @@ displaySection.style.cssText = "border-radius: 2rem; border: 2px solid hotpink; 
 const bodySection = document.querySelector('body');
 const hScore = document.querySelector('.hScore');
 const cScore = document.querySelector('.cScore');
+const scoreSection = document.querySelector('.score');
