@@ -6,23 +6,26 @@ body{
     align-items: center;
     gap: 3rem;
 }
-.instruction{
-    font-family: Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 1rem;
-    background-color: #FFE8FC;
-    padding: 1rem;
-    gap: 0.5rem;
-    max-width: 34rem;
+
+img{
+    max-width: 10rem;
+    border-radius: 2rem;
 }
+
 .header{
+    background-image: url(./images/blurry-gradient-haikei.svg);
     font-size: 4rem;
     border-bottom: 1px dotted black;
+    border-radius: 0.8rem;
 }
-.title{
-    font-size: 2rem;
+
+.buttons{
+    display: flex;
+    gap: 3rem;
+}
+
+.buttons > *{
+    border-radius: 2rem;
+    border-color: hotpink;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
