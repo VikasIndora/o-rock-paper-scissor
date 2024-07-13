@@ -12,16 +12,13 @@ function getComputerChoice(){
     }
 }
 
-function showScore(){
-    return `Your score: ${humanScore} & Computer score: ${computerScore}`
-}
 function showChoice(){
     return `You chose: ${humanSelection} & Computer chose: ${computerSelection}`
 }
 
 function playRound(humanChoice,computerChoice){
     if (humanChoice == computerChoice){
-        displaySection.appendChild(document.createTextNode(`Its a Draw.. || ${showChoice()}`));
+        displaySection.appendChild(document.createTextNode(`Its a Draw.. || ${showChoice()} `));
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'rock' && computerChoice == 'paper'){
@@ -65,6 +62,7 @@ const paper = document.querySelector('.paper')
 const scissor = document.querySelector('.scissor')
 
 rock.addEventListener('click', (e)=>{
+    displaySection.textContent = '';
     humanSelection = 'rock';
     computerSelection = getComputerChoice();
     playRound(humanSelection,computerSelection);
@@ -72,6 +70,7 @@ rock.addEventListener('click', (e)=>{
 })
 
 paper.addEventListener('click', (e)=>{
+    displaySection.textContent = '';
     humanSelection = 'paper';
     computerSelection = getComputerChoice();
     playRound(humanSelection,computerSelection);
@@ -79,6 +78,7 @@ paper.addEventListener('click', (e)=>{
 })
 
 scissor.addEventListener('click', (e)=>{
+    displaySection.textContent = '';
     humanSelection = 'scissor';
     computerSelection = getComputerChoice();
     playRound(humanSelection,computerSelection);
