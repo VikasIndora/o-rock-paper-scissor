@@ -18,36 +18,36 @@ function showChoice(){
 
 function playRound(humanChoice,computerChoice){
     if (humanChoice == computerChoice){
-        displaySection.appendChild(document.createTextNode(`Its a Draw.. || ${showChoice()} `));
+        displaySection.textContent = `Its a Draw.. || ${showChoice()}`;
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'rock' && computerChoice == 'paper'){
-        displaySection.appendChild(document.createTextNode(`Computer Wins! || ${showChoice()}`));
+        displaySection.textContent = `Computer Wins! || ${showChoice()}`;
         ++computerScore;
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'rock' && computerChoice == 'scissor'){
-        displaySection.appendChild(document.createTextNode(`You Win! || ${showChoice()}`));
+        displaySection.textContent = `You Win! || ${showChoice()}`;
         ++humanScore;
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'paper' && computerChoice == 'rock'){
-        displaySection.appendChild(document.createTextNode(`You Win! || ${showChoice()}`));
+        displaySection.textContent = `You Win! || ${showChoice()}`;
         ++humanScore;
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'paper' && computerChoice == 'scissor'){
-        displaySection.appendChild(document.createTextNode(`Computer Wins! || ${showChoice()}`));
+        displaySection.textContent = `Computer Wins! || ${showChoice()}`;
         ++computerScore;
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }else if (humanChoice == 'scissor' && computerChoice == 'rock'){
-        displaySection.appendChild(document.createTextNode(`Computer Wins! || ${showChoice()}`));
+        displaySection.textContent = `Computer Wins! || ${showChoice()}`;
         ++computerScore;
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
     }else {
-        displaySection.appendChild(document.createTextNode(`You Win! || ${showChoice()}`));
+        displaySection.textContent = `You Win! || ${showChoice()}`;
         ++humanScore;
         hScore.textContent = `${humanScore}`;
         cScore.textContent = `${computerScore}`;
